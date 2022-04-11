@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+estoy en el blog <br>
+<br>
+{% for post in posts %}
+<a href="{% url 'blog:detail' post.id %}"> {{ post.title }} </a>
+<a href="{% url 'blog:update' post.id %}"> update </a>
+<a href="{% url 'blog:delete' post.id %}"> delete </a>
+{% endfor %}
+<br>
+<a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px4 rounded" href="{% url 'blog:create' %} ">Create a new blog</a>
+
+{% endblock content %}
